@@ -1,0 +1,65 @@
+{
+    "name": "datana-gmbh/datapool-api",
+    "type": "library",
+    "description": "API for Datapool",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Oskar Stark",
+            "email": "oskarstark@googlemail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "oskarstark/trimmed-non-empty-string": "^1.0",
+        "psr/log": "^1.1 || ^2.0 || ^3.0",
+        "symfony/http-client": "^4.4 || ^5.1 || ^6.0",
+        "thecodingmachine/safe": "^1.0 || ^2.0",
+        "webmozart/assert": "^1.7"
+    },
+    "require-dev": {
+        "ergebnis/composer-normalize": "^2.2",
+        "ergebnis/test-util": "^1.5",
+        "ergebnis/php-cs-fixer-config": "^5.0",
+        "phpstan/extension-installer": "^1.0",
+        "phpstan/phpstan": "^1.0",
+        "phpstan/phpstan-webmozart-assert": "^1.0",
+        "phpunit/phpunit": "^9.0",
+        "thecodingmachine/phpstan-safe-rule": "^1.0"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Datana\\Datapool\\Api\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Datana\\Datapool\\Api\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "scripts": {
+        "cs": [
+            "vendor/bin/php-cs-fixer fix"
+        ],
+        "cs-check": [
+            "vendor/bin/php-cs-fixer fix --diff --diff-format=udiff --dry-run --verbose"
+        ],
+        "phpstan": [
+            "@php -d memory_limit=-1 vendor/bin/phpstan analyse --configuration phpstan.neon --no-progress"
+        ],
+        "phpstan-baseline": [
+            "@php -d memory_limit=-1 vendor/bin/phpstan analyse --configuration phpstan.neon --generate-baseline=phpstan-baseline.neon --no-progress"
+        ],
+        "test": [
+            "@php -d memory_limit=-1 vendor/bin/phpunit"
+        ]
+    }
+}

@@ -1,0 +1,37 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Property Datana\\\\Datapool\\\\Api\\\\DatapoolClient\\:\\:\\$logger is never read, only written\\.$#"
+			count: 1
+			path: src/DatapoolClient.php
+
+		-
+			message: "#^Method Datana\\\\Datapool\\\\Api\\\\Response\\\\AktenResponse\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Response/AktenResponse.php
+
+		-
+			message: "#^Method Datana\\\\Datapool\\\\Api\\\\Response\\\\ETerminInfoResponse\\:\\:toArray\\(\\) should return array\\{service_id\\: string\\|null, service_url\\: string\\|null\\} but returns array\\.$#"
+			count: 1
+			path: src/Response/ETerminInfoResponse.php
+
+		-
+			message: "#^Method Datana\\\\Datapool\\\\Api\\\\Response\\\\KtAktenInfoResponse\\:\\:toArray\\(\\) should return array\\{id\\: int, url\\: string, instance\\: string, group\\: string\\} but returns array\\.$#"
+			count: 1
+			path: src/Response/KtAktenInfoResponse.php
+
+		-
+			message: "#^Method Datana\\\\Datapool\\\\Api\\\\Response\\\\SachstandResponse\\:\\:getParagraphs\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Response/SachstandResponse.php
+
+		-
+			message: "#^Method Datana\\\\Datapool\\\\Api\\\\Response\\\\SachstandResponse\\:\\:toArray\\(\\) should return array\\{headline\\: string, paragraphs\\: array\\<int, string\\>\\} but returns array\\.$#"
+			count: 1
+			path: src/Response/SachstandResponse.php
+
+		-
+			message: "#^Method Datana\\\\Datapool\\\\Api\\\\Response\\\\SimplyBookInfoResponse\\:\\:toArray\\(\\) should return array\\{service_id\\: string\\|null, service_url\\: string\\|null\\} but returns array\\.$#"
+			count: 1
+			path: src/Response/SimplyBookInfoResponse.php
+
