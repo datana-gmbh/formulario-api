@@ -1,4 +1,4 @@
-# datapool-api
+# formulario-api
 
 | Branch    | PHP                                         | Code Coverage                                        |
 |-----------|---------------------------------------------|------------------------------------------------------|
@@ -9,7 +9,7 @@
 ### Installation
 
 ```bash
-composer require datana-gmbh/datapool-api
+composer require datana-gmbh/formulario-api
 ```
 
 ### Setup
@@ -316,8 +316,8 @@ $chatProtocol->log(
 );
 ```
 
-[build-status-master-php]: https://github.com/datana-gmbh/datapool-api/workflows/PHP/badge.svg?branch=master
-[coverage-status-master]: https://codecov.io/gh/datana-gmbh/datapool-api/branch/master/graph/badge.svg
+[build-status-master-php]: https://github.com/datana-gmbh/formulario-api/workflows/PHP/badge.svg?branch=master
+[coverage-status-master]: https://codecov.io/gh/datana-gmbh/formulario-api/branch/master/graph/badge.svg
 
-[actions]: https://github.com/datana-gmbh/datapool-api/actions
-[codecov]: https://codecov.io/gh/datana-gmbh/datapool-api
+[actions]: https://github.com/datana-gmbh/formulario-api/actions
+[codecov]: https://codecov.io/gh/datana-gmbh/formulario-api

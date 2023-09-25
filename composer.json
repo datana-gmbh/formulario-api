@@ -1,7 +1,7 @@
 {
-    "name": "datana-gmbh/datapool-api",
+    "name": "datana-gmbh/formulario-api",
     "type": "library",
-    "description": "API for Datapool",
+    "description": "API for Formulario",
     "license": "MIT",
     "authors": [
         {
@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "php": ">=8.1",
+        "php": ">=8.2",
         "oskarstark/trimmed-non-empty-string": "^1.0",
         "psr/log": "^1.1 || ^2.0 || ^3.0",
         "symfony/http-client": "^4.4 || ^5.1 || ^6.0",
@@ -36,12 +36,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Datana\\Datapool\\Api\\": "src/"
+            "Datana\\Formulario\\Api\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Datana\\Datapool\\Api\\Tests\\": "tests/"
+            "Datana\\Formulario\\Api\\Tests\\": "tests/"
         }
     },
     "minimum-stability": "stable",
