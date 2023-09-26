@@ -13,12 +13,6 @@ declare(strict_types=1);
 
 namespace Datana\Formulario\Api;
 
-use Datana\Formulario\Api\Domain\Value\Dateneingabe;
-use Datana\Formulario\Api\Domain\Value\DateneingabeId;
-use Datana\Formulario\Api\Domain\Value\DateneingabenCollection;
-use Datana\Formulario\Api\Exception\DateneingabeNotFound;
-use Datana\Formulario\Api\Exception\NonUniqueResult;
-use OskarStark\Value\TrimmedNonEmptyString;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 use Webmozart\Assert\Assert;
