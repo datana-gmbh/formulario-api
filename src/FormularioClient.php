@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /**
- * This file is part of Datapool-Api.
+ * This file is part of datana-gmbh/formulario-api.
  *
  * (c) Datana GmbH <info@datana.rocks>
  *
@@ -11,7 +11,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Datana\Datapool\Api;
+namespace Datana\Formulario\Api;
 
 use OskarStark\Value\TrimmedNonEmptyString;
 use Psr\Log\LoggerInterface;
@@ -21,24 +21,21 @@ use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface;
 use Webmozart\Assert\Assert;
-use function Safe\sprintf;
 
 /**
  * @author Oskar Stark <oskarstark@googlemail.com>
  */
-final class DatapoolClient
+final class FormularioClient
 {
     private HttpClientInterface $client;
-    private string $username;
-    private string $password;
+    private string $token;
     private int $timeout;
     private LoggerInterface $logger;
 
-    public function __construct(string $baseUri, string $username, string $password, int $timeout = 2, ?LoggerInterface $logger = null)
+    public function __construct(string $baseUri, string $token, int $timeout = 2, ?LoggerInterface $logger = null)
     {
         $this->client = HttpClient::createForBaseUri($baseUri);
-        $this->username = TrimmedNonEmptyString::fromString($username, '$username must not be an empty string')->toString();
-        $this->password = TrimmedNonEmptyString::fromString($password, '$password must not be an empty string')->toString();
+        $this->token = TrimmedNonEmptyString::fromString($token, '$token must not be an empty string')->toString();
         $this->timeout = $timeout;
         $this->logger = $logger ?? new NullLogger();
     }
@@ -72,11 +69,11 @@ final class DatapoolClient
             array_merge(
                 $options,
                 [
-                    'auth_basic' => sprintf(
-                        '%s:%s',
-                        $this->username,
-                        $this->password,
+                    'auth_bearer' => sprintf(
+                        'Bearer %s',
+                        $this->token,
                     ),
+                    'max_duration' => 1000,
                 ],
             ),
         );
