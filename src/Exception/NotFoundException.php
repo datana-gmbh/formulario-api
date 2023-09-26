@@ -11,12 +11,8 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Datana\Formulario\Api;
+namespace Datana\Formulario\Api\Exception;
 
-/**
- * @author Oskar Stark <oskar.stark@googlemail.de>
- */
-interface AktenzeichenApiInterface
+class NotFoundException extends \LogicException
 {
-    public function new(): string;
 }

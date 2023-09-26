@@ -15,12 +15,12 @@ namespace Datana\Formulario\Api\Exception;
 
 use Datana\Formulario\Api\Domain\Value\DateneingabeId;
 
-final class DateneingabeNotFound extends NotFoundException
+final class NonUniqueResult extends \LogicException
 {
     public static function withDateneingabeId(DateneingabeId $dateneingabeId): self
     {
         return new self(sprintf(
-            'Cannot find Dateneingabe with DateneingabeId: %s',
+            'DateneingabeApi with ID "%s" resulted more then one result.',
             $dateneingabeId->toInt(),
         ));
     }

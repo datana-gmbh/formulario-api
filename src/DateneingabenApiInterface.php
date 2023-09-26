@@ -13,13 +13,16 @@ declare(strict_types=1);
 
 namespace Datana\Formulario\Api;
 
+use Datana\Formulario\Api\Domain\Value\Dateneingabe;
+use Datana\Formulario\Api\Domain\Value\DateneingabeId;
+use Datana\Formulario\Api\Domain\Value\DateneingabenCollection;
+
 /**
  * @author Oskar Stark <oskar.stark@googlemail.de>
  */
-interface ChatProtocolApiInterface
+interface DateneingabenApiInterface
 {
-    /**
-     * @param array<mixed> $conversation
-     */
-    public function save(string $aktenzeichen, string $conversationId, array $conversation, \DateTimeInterface $createdAt): bool;
+    public function byAktenzeichen(string $aktenzeichen): DateneingabenCollection;
+
+    public function byId(DateneingabeId $id): Dateneingabe;
 }
