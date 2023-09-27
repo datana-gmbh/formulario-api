@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace Datana\Formulario\Api\Tests\Util;
 
+use Datana\Formulario\Api\Bridge\Faker\Provider\DateneingabeIdProvider;
 use Faker\Factory;
 use Faker\Generator;
 
@@ -30,6 +31,8 @@ trait Helper
             $faker = Factory::create($locale);
 
             $faker->seed(9001);
+
+            $faker->addProvider(new DateneingabeIdProvider($faker));
 
             $fakers[$locale] = $faker;
         }

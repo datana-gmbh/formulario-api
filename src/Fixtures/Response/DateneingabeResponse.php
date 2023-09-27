@@ -67,7 +67,7 @@ final class DateneingabeResponse
 
         $response = [
             'id' => $faker->numberBetween(1),
-            'case_reference' => $faker->aktenzeichenString(),
+            'case_reference' => $faker->word(),
             'created_at' => $createdAt->getTimestamp(),
             'finished_at' => $setFinishedAt ? $finishedAt->getTimestamp() : null,
             'reference' => $faker->boolean() ? $faker->word() : $faker->numberBetween(1, 9999),

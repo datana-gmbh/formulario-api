@@ -13,8 +13,6 @@ declare(strict_types=1);
 
 namespace Datana\Formulario\Api\Domain\Value;
 
-use App\Domain\Value\Akte\Aktenzeichen;
-use App\External\Value\Dateneingabe\Reminder;
 use Datana\Mandantencockpit\Contracts\Notification\Enum\Priority;
 use Datana\Mandantencockpit\Contracts\Notification\Enum\Target;
 use Datana\Mandantencockpit\Contracts\Notification\Notifyable;
@@ -27,7 +25,7 @@ use function Safe\date;
 final class Dateneingabe implements Notifyable
 {
     public readonly DateneingabeId $id;
-    public readonly Aktenzeichen $aktenzeichen;
+    public readonly string $aktenzeichen;
     public readonly ?string $url;
     public readonly string $type;
     public readonly string $state;
@@ -60,7 +58,7 @@ final class Dateneingabe implements Notifyable
 
         Assert::keyExists($value, 'case_reference', 'Key "case_reference" must exist.');
         Assert::string($value['case_reference'], 'Value of "case_reference" must be a string. Got: %s');
-        $this->aktenzeichen = Aktenzeichen::fromString($value['case_reference']);
+        $this->aktenzeichen = $value['case_reference'];
 
         Assert::keyExists($value, 'configuration', 'Key "configuration" must exist.');
 

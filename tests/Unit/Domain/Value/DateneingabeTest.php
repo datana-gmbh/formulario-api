@@ -13,10 +13,10 @@ declare(strict_types=1);
 
 namespace Datana\Formulario\Api\Tests\Unit\Domain\Value;
 
-use App\Tests\Fixture\Formulario\Response\DateneingabeResponse;
-use App\Tests\Fixture\Formulario\Response\ReminderResponse;
 use Datana\Formulario\Api\Domain\Value\Dateneingabe;
 use Datana\Formulario\Api\Domain\Value\Type;
+use Datana\Formulario\Api\Fixtures\Response\DateneingabeResponse;
+use Datana\Formulario\Api\Fixtures\Response\ReminderResponse;
 use Datana\Formulario\Api\Tests\Util\Helper;
 use Datana\Mandantencockpit\Contracts\Notification\Enum\Target;
 use Datana\Mandantencockpit\Contracts\Notification\Value\TargetId;
@@ -376,10 +376,10 @@ final class DateneingabeTest extends TestCase
     public function responseCanBeConstructedAndUsesValueFromKeyCaseReference(): void
     {
         $value = DateneingabeResponse::create([
-            'case_reference' => $aktenzeichen = self::faker()->aktenzeichenString(),
+            'case_reference' => $aktenzeichen = self::faker()->word(),
         ]);
 
-        self::assertSame($aktenzeichen, Dateneingabe::fromArray($value)->aktenzeichen->toString());
+        self::assertSame($aktenzeichen, Dateneingabe::fromArray($value)->aktenzeichen);
     }
 
     /**
