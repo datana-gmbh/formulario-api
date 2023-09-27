@@ -69,10 +69,7 @@ final class FormularioClient
             array_merge(
                 $options,
                 [
-                    'auth_bearer' => sprintf(
-                        'Bearer %s',
-                        $this->token,
-                    ),
+                    'auth_bearer' => $this->token,
                     'max_duration' => 1000,
                 ],
             ),
