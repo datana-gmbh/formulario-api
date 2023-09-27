@@ -1,37 +1,87 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Property Datana\\\\Datapool\\\\Api\\\\DatapoolClient\\:\\:\\$logger is never read, only written\\.$#"
+			message: "#^Class Datana\\\\Formulario\\\\Api\\\\Domain\\\\Value\\\\Dateneingabe has an uninitialized readonly property \\$token\\. Assign it in the constructor\\.$#"
 			count: 1
-			path: src/DatapoolClient.php
+			path: src/Domain/Value/Dateneingabe.php
 
 		-
-			message: "#^Method Datana\\\\Datapool\\\\Api\\\\Response\\\\AktenResponse\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: "#^Property Datana\\\\Formulario\\\\Api\\\\Domain\\\\Value\\\\DateneingabeId\\:\\:\\$value is never read, only written\\.$#"
 			count: 1
-			path: src/Response/AktenResponse.php
+			path: src/Domain/Value/DateneingabeId.php
 
 		-
-			message: "#^Method Datana\\\\Datapool\\\\Api\\\\Response\\\\ETerminInfoResponse\\:\\:toArray\\(\\) should return array\\{service_id\\: string\\|null, service_url\\: string\\|null\\} but returns array\\.$#"
+			message: "#^Method Datana\\\\Formulario\\\\Api\\\\Domain\\\\Value\\\\DateneingabenCollection\\:\\:__construct\\(\\) has parameter \\$response with no value type specified in iterable type array\\.$#"
 			count: 1
-			path: src/Response/ETerminInfoResponse.php
+			path: src/Domain/Value/DateneingabenCollection.php
 
 		-
-			message: "#^Method Datana\\\\Datapool\\\\Api\\\\Response\\\\KtAktenInfoResponse\\:\\:toArray\\(\\) should return array\\{id\\: int, url\\: string, instance\\: string, group\\: string\\} but returns array\\.$#"
+			message: "#^Method Datana\\\\Formulario\\\\Api\\\\Domain\\\\Value\\\\DateneingabenCollection\\:\\:fromArray\\(\\) has parameter \\$response with no value type specified in iterable type array\\.$#"
 			count: 1
-			path: src/Response/KtAktenInfoResponse.php
+			path: src/Domain/Value/DateneingabenCollection.php
 
 		-
-			message: "#^Method Datana\\\\Datapool\\\\Api\\\\Response\\\\SachstandResponse\\:\\:getParagraphs\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: "#^Method Datana\\\\Formulario\\\\Api\\\\Fixtures\\\\Response\\\\ReminderResponse\\:\\:create\\(\\) should return array\\{id\\: int\\|null, time\\: int, sender\\: 'string'\\} but returns array\\.$#"
 			count: 1
-			path: src/Response/SachstandResponse.php
+			path: src/Fixtures/Response/ReminderResponse.php
 
 		-
-			message: "#^Method Datana\\\\Datapool\\\\Api\\\\Response\\\\SachstandResponse\\:\\:toArray\\(\\) should return array\\{headline\\: string, paragraphs\\: array\\<int, string\\>\\} but returns array\\.$#"
+			message: "#^Property Datana\\\\Formulario\\\\Api\\\\FormularioClient\\:\\:\\$logger is never read, only written\\.$#"
 			count: 1
-			path: src/Response/SachstandResponse.php
+			path: src/FormularioClient.php
 
 		-
-			message: "#^Method Datana\\\\Datapool\\\\Api\\\\Response\\\\SimplyBookInfoResponse\\:\\:toArray\\(\\) should return array\\{service_id\\: string\\|null, service_url\\: string\\|null\\} but returns array\\.$#"
+			message: "#^Call to an undefined method Faker\\\\Generator\\:\\:dateneingabeIdInt\\(\\)\\.$#"
 			count: 1
-			path: src/Response/SimplyBookInfoResponse.php
+			path: tests/Unit/Domain/Value/DateneingabeIdTest.php
+
+		-
+			message: "#^Method Datana\\\\Formulario\\\\Api\\\\Tests\\\\Unit\\\\Domain\\\\Value\\\\DateneingabeTest\\:\\:fromArray\\(\\) has parameter \\$value with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: tests/Unit/Domain/Value/DateneingabeTest.php
+
+		-
+			message: "#^Method Datana\\\\Formulario\\\\Api\\\\Tests\\\\Unit\\\\Domain\\\\Value\\\\DateneingabeTest\\:\\:fromArrayProvider\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: tests/Unit/Domain/Value/DateneingabeTest.php
+
+		-
+			message: "#^Method Datana\\\\Formulario\\\\Api\\\\Tests\\\\Unit\\\\Domain\\\\Value\\\\DateneingabeTest\\:\\:showOpenLink\\(\\) has parameter \\$value with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: tests/Unit/Domain/Value/DateneingabeTest.php
+
+		-
+			message: "#^Method Datana\\\\Formulario\\\\Api\\\\Tests\\\\Unit\\\\Domain\\\\Value\\\\DateneingabeTest\\:\\:showOpenLinkProvider\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: tests/Unit/Domain/Value/DateneingabeTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of static method Datana\\\\Mandantencockpit\\\\Contracts\\\\Notification\\\\Value\\\\TargetId\\:\\:fromInt\\(\\) expects int, mixed given\\.$#"
+			count: 1
+			path: tests/Unit/Domain/Value/DateneingabeTest.php
+
+		-
+			message: "#^Parameter \\#2 \\$haystack of static method PHPUnit\\\\Framework\\\\Assert\\:\\:assertStringContainsString\\(\\) expects string, string\\|null given\\.$#"
+			count: 1
+			path: tests/Unit/Domain/Value/DateneingabeTest.php
+
+		-
+			message: "#^Call to an undefined method Faker\\\\Generator\\:\\:dateneingabeId\\(\\)\\.$#"
+			count: 14
+			path: tests/Unit/Domain/Value/ReminderTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$values of static method Datana\\\\Formulario\\\\Api\\\\Domain\\\\Value\\\\Reminder\\:\\:create\\(\\) expects array\\{id\\: int\\|null, time\\: int, sender\\: string\\}, array\\{id\\: int\\|null, sender\\: 'string'\\} given\\.$#"
+			count: 1
+			path: tests/Unit/Domain/Value/ReminderTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$values of static method Datana\\\\Formulario\\\\Api\\\\Domain\\\\Value\\\\Reminder\\:\\:create\\(\\) expects array\\{id\\: int\\|null, time\\: int, sender\\: string\\}, array\\{id\\: int\\|null, time\\: int\\} given\\.$#"
+			count: 1
+			path: tests/Unit/Domain/Value/ReminderTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$values of static method Datana\\\\Formulario\\\\Api\\\\Domain\\\\Value\\\\Reminder\\:\\:create\\(\\) expects array\\{id\\: int\\|null, time\\: int, sender\\: string\\}, array\\{time\\: int, sender\\: 'string'\\} given\\.$#"
+			count: 1
+			path: tests/Unit/Domain/Value/ReminderTest.php
 
