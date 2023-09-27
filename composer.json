@@ -11,6 +11,8 @@
     ],
     "require": {
         "php": ">=8.2",
+        "datana-gmbh/mandantencockpit-contracts": "^1.1",
+        "fakerphp/faker": "^1.23",
         "oskarstark/trimmed-non-empty-string": "^1.0",
         "psr/log": "^1.1 || ^2.0 || ^3.0",
         "symfony/http-client": "^4.4 || ^5.1 || ^6.0",

@@ -2,16 +2,21 @@
 
 declare(strict_types=1);
 
+/**
+ * This file is part of datana-gmbh/formulario-api.
+ *
+ * (c) Datana GmbH <info@datana.rocks>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Datana\Formulario\Api\Domain\Value;
 
-use App\Domain\Enum\Dateneingabe\Type;
-use App\Domain\Enum\Notification\Priority;
-use App\Domain\Enum\Notification\Target;
-use App\Domain\Value\Akte\Aktenzeichen;
-use App\Domain\Value\Notification\TargetId;
-use App\External\Value\Dateneingabe\Reminder;
-use App\External\Value\Traits\JustDont;
-use App\Notification\Notifyable;
+use Datana\Mandantencockpit\Contracts\Notification\Enum\Priority;
+use Datana\Mandantencockpit\Contracts\Notification\Enum\Target;
+use Datana\Mandantencockpit\Contracts\Notification\Notifyable;
+use Datana\Mandantencockpit\Contracts\Notification\Value\TargetId;
 use OskarStark\Value\TrimmedNonEmptyString;
 use Safe\DateTimeImmutable;
 use Webmozart\Assert\Assert;
@@ -20,7 +25,7 @@ use function Safe\date;
 final class Dateneingabe implements Notifyable
 {
     public readonly DateneingabeId $id;
-    public readonly Aktenzeichen $aktenzeichen;
+    public readonly string $aktenzeichen;
     public readonly ?string $url;
     public readonly string $type;
     public readonly string $state;
@@ -53,7 +58,7 @@ final class Dateneingabe implements Notifyable
 
         Assert::keyExists($value, 'case_reference', 'Key "case_reference" must exist.');
         Assert::string($value['case_reference'], 'Value of "case_reference" must be a string. Got: %s');
-        $this->aktenzeichen = Aktenzeichen::fromString($value['case_reference']);
+        $this->aktenzeichen = $value['case_reference'];
 
         Assert::keyExists($value, 'configuration', 'Key "configuration" must exist.');
 
