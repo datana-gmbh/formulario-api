@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Datana\Formulario\Api\Fixtures\Response;
 
-use Datana\Formulario\Api\Domain\Value\Type;
+use Datana\Formulario\Api\Domain\Enum\Type;
 use Faker\Factory;
 use function Safe\array_replace_recursive;
 

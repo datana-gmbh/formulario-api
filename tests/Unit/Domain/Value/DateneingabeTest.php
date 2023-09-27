@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace Datana\Formulario\Api\Tests\Unit\Domain\Value;
 
+use Datana\Formulario\Api\Domain\Enum\Type;
 use Datana\Formulario\Api\Domain\Value\Dateneingabe;
-use Datana\Formulario\Api\Domain\Value\Type;
 use Datana\Formulario\Api\Fixtures\Response\DateneingabeResponse;
 use Datana\Formulario\Api\Fixtures\Response\ReminderResponse;
 use Datana\Formulario\Api\Tests\Util\Helper;
