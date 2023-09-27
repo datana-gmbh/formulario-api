@@ -11,7 +11,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Datana\Formulario\Api\Domain\Value;
+namespace Datana\Formulario\Api\Domain\Enum;
 
 use OskarStark\Enum\Trait\Comparable;
 

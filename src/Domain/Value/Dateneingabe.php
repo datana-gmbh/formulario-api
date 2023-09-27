@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace Datana\Formulario\Api\Domain\Value;
 
+use Datana\Formulario\Api\Domain\Enum\Type;
 use Datana\Mandantencockpit\Contracts\Notification\Enum\Priority;
 use Datana\Mandantencockpit\Contracts\Notification\Enum\Target;
 use Datana\Mandantencockpit\Contracts\Notification\Notifyable;
