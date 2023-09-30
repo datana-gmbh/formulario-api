@@ -32,7 +32,7 @@ final class FormularioClient
     private int $timeout;
     private LoggerInterface $logger;
 
-    public function __construct(string $baseUri, string $token, int $timeout = 2, ?LoggerInterface $logger = null)
+    public function __construct(string $baseUri, string $token, int $timeout = 5, ?LoggerInterface $logger = null)
     {
         $this->client = HttpClient::createForBaseUri($baseUri);
         $this->token = TrimmedNonEmptyString::fromString($token, '$token must not be an empty string')->toString();
