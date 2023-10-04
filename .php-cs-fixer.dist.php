@@ -2,6 +2,15 @@
 
 declare(strict_types=1);
 
+/**
+ * This file is part of datana-gmbh/formulario-api.
+ *
+ * (c) Datana GmbH <info@datana.rocks>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 use Ergebnis\PhpCsFixer;
 
 $header = <<<'HEADER'
@@ -60,8 +69,10 @@ $config = PhpCsFixer\Config\Factory::fromRuleSet(new PhpCsFixer\Config\RuleSet\P
 ]);
 
 $config->getFinder()
+    ->append([
+        __DIR__.'/.php-cs-fixer.dist.php',
+    ])
     ->in('src')
     ->in('tests');
-;
 
 return $config;
