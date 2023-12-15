@@ -148,16 +148,39 @@ final class DateneingabeTest extends TestCase
     /**
      * @test
      */
-    public function urlSetIfTypeRegular(): void
+    public function urlSetIfTypeRegularUsesFormulareGanselRechtsanwaelteDe(): void
     {
         $value = DateneingabeResponse::create([
             'type' => Type::REGULAR->value,
             'token' => $token = self::faker()->md5(),
+            'configuration' => [
+                'gowner' => self::faker()->word(),
+            ]
         ]);
 
         $dateneingabe = Dateneingabe::fromArray($value);
 
         self::assertStringContainsString($token, $dateneingabe->url);
+        self::assertStringStartsWith('https://formulare.gansel-rechtsanwaelte.de', $dateneingabe->url);
+    }
+
+    /**
+     * @test
+     */
+    public function urlSetIfTypeRegularUsesFormulareKeenLawComIfGownerIsSetToKeen(): void
+    {
+        $value = DateneingabeResponse::create([
+            'type' => Type::REGULAR->value,
+            'token' => $token = self::faker()->md5(),
+            'configuration' => [
+                'gowner' => 'KEEN',
+            ]
+        ]);
+
+        $dateneingabe = Dateneingabe::fromArray($value);
+
+        self::assertStringContainsString($token, $dateneingabe->url);
+        self::assertStringStartsWith('https://formulare.keen-law.com', $dateneingabe->url);
     }
 
     /**

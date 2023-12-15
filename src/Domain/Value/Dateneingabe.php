@@ -22,6 +22,7 @@ use OskarStark\Value\TrimmedNonEmptyString;
 use Safe\DateTimeImmutable;
 use Webmozart\Assert\Assert;
 use function Safe\date;
+use function Symfony\Component\String\u;
 
 final class Dateneingabe implements Notifyable
 {
@@ -182,6 +183,14 @@ final class Dateneingabe implements Notifyable
                 $this->reference,
                 $this->token,
             );
+
+            if (isset($value['configuration']['gowner'])
+                && 'KEEN' === $value['configuration']['gowner']
+            ) {
+                $url = u($url)
+                    ->replace('://formulare.gansel-rechtsanwaelte.de', '://formulare.keen-law.com')
+                    ->toString();
+            }
         } else {
             Assert::keyExists(
                 $value,
