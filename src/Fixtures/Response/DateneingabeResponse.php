@@ -75,6 +75,7 @@ final class DateneingabeResponse
             'state' => $state,
             'configuration' => [
                 'data_enquiry_title' => $faker->word(),
+                'gowner' => $faker->word(),
             ],
             'steps' => $steps,
             'deadline_at' => null,
